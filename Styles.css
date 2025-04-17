@@ -1,0 +1,242 @@
+body {
+    font-family: 'Arial', sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f8ff;
+    color: #333;
+}
+
+h1 {
+    color: #ff6b6b;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#location-display {
+    width: 100%;
+    max-width: 400px;
+    height: 250px;
+    background-color: #e9f5ff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+#location-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#location-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+#location-description {
+    font-size: 1rem;
+}
+
+#entities {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.entity {
+    font-size: 2rem;
+    animation: float 2s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+#controls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.direction-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+button {
+    padding: 12px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    background-color: #4ecdc4;
+    color: white;
+}
+
+button:hover {
+    background-color: #3aa79f;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+#north {
+    grid-column: 2;
+}
+
+#west {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#east {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+#south {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+#status {
+    width: 100%;
+    padding: 15px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-top: 10px;
+}
+
+#clues {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #fff9e6;
+    border-radius: 8px;
+    font-style: italic;
+}
+
+.cat-icon {
+    color: #ff9ff3;
+    font-weight: bold;
+}
+
+.zombie-icon {
+    color: #1dd1a1;
+    font-weight: bold;
+}
+
+#restart-btn {
+    background-color: #ff6b6b;
+    margin-top: 10px;
+}
+
+#restart-btn:hover {
+    background-color: #ee5253;
+}
+
+#mini-map {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+    margin-top: 15px;
+}
+
+.map-cell {
+    aspect-ratio: 1;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.player {
+    background-color: #4ecdc4;
+    color: white;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.distance-marker {
+    position: absolute;
+    font-size: 0.6rem;
+    color: #666;
+}
+
+#cats-left {
+    font-weight: bold;
+    color: #ff6b6b;
+}
+
+.progress-container {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.progress-bar {
+    height: 20px;
+    background-color: #4ecdc4;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    transition: width 0.3s;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.stat-item {
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.level-up {
+    animation: levelUp 1s ease-in-out;
+    color: #ff9f43;
+    font-weight: bold;
+}
+
+@keyframes levelUp {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}

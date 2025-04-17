@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kattenräddaren</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Kattenräddaren</h1>
+    <div id="game-container">
+        <div id="location-display">
+            <img id="location-image" src="" alt="Platsbild">
+            <div id="location-name">Välkommen!</div>
+            <div id="location-description">Din uppgift är att rädda alla katter innan zombierna tar dig.</div>
+            <div id="entities"></div>
+        
+            </div>
+            
+        </div>
+        <div id="controls">
+            <div class="direction-buttons">
+                <button id="north">Norr (N)</button>
+                <button id="west">Väst (V)</button>
+                <button id="east">Öst (Ö)</button>
+                <button id="south">Syd (S)</button>
+            </div>
+            <button id="restart-btn">Starta om spelet</button>
+        </div>
+        
+        <div id="mini-map"></div>
+        <div id="controls" role="navigation" aria-label="Spelkontroller">
+
+        <div id="status">
+            <div class="stats">
+                <div class="stat-item">Nivå: <span id="level">1</span></div>
+                <div class="stat-item">Poäng: <span id="points">0</span></div>
+                <div class="stat-item">XP: <span id="xp">0</span>/<span id="xp-needed">100</span></div>
+            </div>
+            <div class="progress-container">
+                <div id="xp-bar" class="progress-bar" style="width: 0%">0%</div>
+            </div>
+            <p>Kvar att rädda: <span id="cats-left">3</span> katter</p>
+            <div id="clues"></div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
